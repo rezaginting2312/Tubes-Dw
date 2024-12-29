@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil - PropertiHub</title>
+        <link href="/dist/output.css" rel="stylesheet"> <!-- Tautkan output Tailwind -->
+    </head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-500">PropertiHub Dashboard</h1>
+            <button id="menuToggle" class="md:hidden text-gray-600 hover:text-blue-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <ul id="menu" class="hidden md:flex space-x-6">
+                <li><a href="Dashboard.html" class="text-gray-600 hover:text-blue-500">Home</a></li>
+                <li><a href="properti.html" class="text-gray-600 hover:text-blue-500">Properti</a></li>
+                <li><a href="pesan.html" class="text-gray-600 hover:text-blue-500">Pesan</a></li>
+                <li><a href="komunikasi.html" class="text-gray-600 hover:text-blue-500">Komunikasi</a></li>
+                
+                <li><a href="profil.html" class="text-gray-600 hover:text-blue-500">Profil</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="bg-gradient-to-r from-blue-200 to-blue-400 py-16">
+        <div class="container mx-auto px-4 py-10">
+            <div class="bg-white shadow-xl rounded-lg p-8">
+                <h2 class="text-3xl font-bold text-gray-700 mb-6">Profil Pengguna</h2>
+
+                <!-- Profil Informasi -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-gray-600">Nama</label>
+                        <p id="profile-name" class="text-gray-800 font-medium">Supri</p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Email</label>
+                        <p id="profile-email" class="text-gray-800 font-medium">Supridoe@gmail.com</p>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Nomor Telepon</label>
+                        <p id="profile-phone" class="text-gray-800 font-medium">081234567890</p>
+                    </div>
+                </div>
+
+                <!-- Tombol Edit -->
+                <div class="mt-8 flex justify-end">
+                    <button 
+                        id="edit-profile-btn" 
+                        class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105"
+                        onclick="openEditProfileModal()">
+                        Edit Profil
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit Profil -->
+    <div id="edit-profile-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 w-full max-w-md shadow-lg transform transition duration-500">
+            <h3 class="text-2xl font-bold text-gray-700 mb-6">Edit Profil</h3>
+            <form id="profile-form">
+                <div class="mb-6">
+                    <label class="block text-gray-600 mb-2">Nama</label>
+                    <input type="text" id="edit-name" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 transition duration-300" value="John Doe">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-600 mb-2">Email</label>
+                    <input type="email" id="edit-email" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 transition duration-300" value="johndoe@gmail.com">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-600 mb-2">Nomor Telepon</label>
+                    <input type="text" id="edit-phone" class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 transition duration-300" value="081234567890">
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg mr-2 hover:bg-gray-400 transition duration-300" onclick="closeEditProfileModal()">Batal</button>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="profil.js">
+        
+    </script>
+</body>
+</html>
